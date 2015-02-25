@@ -1,15 +1,19 @@
 package com.aloknath.restraurant_app.Fragments;
 
 import android.app.Activity;
-import android.app.Fragment;
+
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.aloknath.restraurant_app.Activities.EntertainmentActivity;
 import com.aloknath.restraurant_app.R;
 
 import java.io.IOException;
@@ -18,7 +22,7 @@ import java.io.InputStream;
 /**
  * Created by ALOKNATH on 2/25/2015.
  */
-public class Fragment_Blog_For_Grid extends Fragment{
+public class Fragment_Blog_For_Grid extends Fragment {
 
     private String title;
     View view;
@@ -39,7 +43,7 @@ public class Fragment_Blog_For_Grid extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        title = getArguments().getString("Title");
+        //title = getArguments().getString("Title");
     }
 
     @Nullable
@@ -57,15 +61,25 @@ public class Fragment_Blog_For_Grid extends Fragment{
         try
         {
             // get input stream
-            InputStream ims = getActivity().getAssets().open("read_more.jpg");
+            InputStream ims = getActivity().getAssets().open("read_more_button.jpg");
             // load image as Drawable
             Drawable d = Drawable.createFromStream(ims, null);
             ImageView imageView = (ImageView)view.findViewById(R.id.read_more);
             imageView.setImageDrawable(d);
+            imageView.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    Intent intent = new Intent(getActivity(), EntertainmentActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+            });
 
         }catch(IOException ex)
         {
             return;
         }
+
     }
 }

@@ -114,11 +114,11 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_width="135dp"
+        android:layout_height="30dp"
         android:id="@+id/read_more"
         android:layout_below="@+id/content_position"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="455dp"
         />
 
