@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#F0EAD6">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:text="Merry Christmas: HO HO HO"
+        android:textAllCaps="true"
+        android:id="@+id/blog_title"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posted on: "
+        android:id="@+id/posted_on"
+        android:layout_below="@+id/blog_title"
+        android:layout_alignLeft="@+id/blog_title"
+        android:layout_alignStart="@+id/blog_title"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23 Feb 2015"
+        android:id="@+id/posted_on_update"
+        android:layout_below="@+id/blog_title"
+        android:layout_toRightOf="@+id/posted_on"
+        android:layout_toEndOf="@+id/posted_on"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="34dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comments_button"
+        android:layout_below="@+id/blog_title"
+        android:layout_toRightOf="@+id/posted_on_update"
+        android:layout_toEndOf="@+id/posted_on_update"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="7dp"
+        android:src="@drawable/ic_comment"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 Comments"
+        android:id="@+id/comments_count"
+        android:layout_below="@+id/blog_title"
+        android:layout_toRightOf="@+id/comments_button"
+        android:layout_toEndOf="@+id/comments_button"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="7dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/twitter_tweet"
+        android:layout_toRightOf="@+id/comments_count"
+        android:layout_marginTop="72dp"
+        android:layout_marginLeft="150dp"
+        android:src="@drawable/ic_tweet"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/facebook_like"
+        android:layout_toRightOf="@+id/twitter_tweet"
+        android:layout_marginTop="72dp"
+        android:layout_marginLeft="25dp"
+        android:src="@drawable/ic_facebook_like"
+        />
+
+    <RelativeLayout
+        android:layout_width="525dp"
+        android:layout_height="175dp"
+        android:id="@+id/content_position"
+        android:layout_below="@+id/posted_on"
+        android:layout_alignLeft="@+id/posted_on"
+        android:layout_alignStart="@+id/posted_on"
+        android:background="#7FFFD4"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/food_picture"
+            android:src="@drawable/ic_facebook_like"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="345dp"
+            android:layout_height="150dp"
+            android:text="The Description of the Blog Goes Here !!!"
+            android:id="@+id/blog_brief_summary"
+            android:layout_toRightOf="@+id/food_picture"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="#FBCCE7"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:id="@+id/read_more"
+        android:layout_below="@+id/content_position"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="455dp"
+        />
+
+</RelativeLayout>

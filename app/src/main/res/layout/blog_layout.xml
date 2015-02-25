@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E0FFFF">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="I'm The Blog Fragment Expanded"
-        android:gravity="center"
-        android:background="#F08080"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <GridView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:columnWidth="630dp"
+        android:gravity="center_horizontal"
+        android:horizontalSpacing="10dip"
+        android:numColumns="1"
+        android:stretchMode="spacingWidthUniform"
+        android:verticalSpacing="125dip" />
+
 
 </LinearLayout>
