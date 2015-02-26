@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#F0EAD6"
+    >
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="fill_parent"
+        android:id="@+id/blog_image"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLOG TITLE: The Best Biryani That I've Ever Had !!!"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/blog_image"
+        android:layout_toRightOf="@+id/blog_image"
+        android:layout_toEndOf="@+id/blog_image"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginRight="25dp"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="I have been to several good Indian restaurants in New York and I would consider this one in particular as on a comparative scale.
+Being in that neighborhood,we went in last night and we had several dishes:
+a)the saag paneer (spinach ) ,which we had ordered originally as an appetizer to share.
+b)chicken breast tandoori
+c)chicken vindaloo
+First and foremost,even though the vindaloo dish and the spinach saag paneer were definitely tastier than the chicken tandoori,I would not be surprised if they did not contain substantial amounts of MSG to enhance their flavour.
+The fact is that both of us developed simultaneously a similar reaction:an overall state of malaise accompanied by shortness of breath, heat and pruritus.
+Luckily,we were not far from a Duane Reade Pharmacy and immediately swallowed two Benadrils to prevent the worsening of a possible allergic reaction. The Benadrils which we bought within minutes, indeed did help.
+What also left me rather perplexed was that the vindaloo did not come accompanied by any kind of rice.
+Differently from other good Indian Restaurants in Manhattan,not even a Naan Bread was brought to the table.
+The mango chutney was brought as a side dish ,for which there was a separate charge.
+Based on my previous dining experiences in Indian Restaurants in Manhattan,in London and even in New Delhi , I personally find the fact of charging for a small plate of chutney, totally unappropriate.
+The pappadums were brought to the table cold and relatively  ,but still acceptable and eadible!
+All in all I think it is somewhat overpriced for what it offers.
+There are definitely other far superior Indian Restaurants in the Big Apple."/>
+
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

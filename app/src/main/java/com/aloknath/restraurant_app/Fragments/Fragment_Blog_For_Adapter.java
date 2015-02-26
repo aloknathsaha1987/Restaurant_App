@@ -108,6 +108,12 @@ public class Fragment_Blog_For_Adapter extends Fragment {
                 }
             });
 
+            ims = getActivity().getAssets().open("biryani.jpg");
+             d = Drawable.createFromStream(ims, null);
+            imageView = (ImageView)view.findViewById(R.id.food_picture);
+            imageView.setImageDrawable(d);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+
         }catch(IOException ex)
         {
             return;

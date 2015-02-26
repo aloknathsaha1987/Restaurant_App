@@ -35,6 +35,8 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".Activities.BlogActivity" android:configChanges="orientation|screenSize"
             android:screenOrientation="landscape"/>
+        <activity android:name=".Activities.BlogDetailActivity" android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
