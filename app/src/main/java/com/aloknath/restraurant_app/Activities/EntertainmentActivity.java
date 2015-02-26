@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.widget.GridView;
 
 import com.aloknath.restraurant_app.Adapters.ButtonAdapter;
-import com.aloknath.restraurant_app.CustomViews.CircleView;
 import com.aloknath.restraurant_app.R;
 
 import java.io.IOException;
