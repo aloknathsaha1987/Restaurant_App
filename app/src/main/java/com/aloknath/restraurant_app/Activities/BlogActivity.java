@@ -60,7 +60,7 @@ public class BlogActivity extends FragmentActivity implements Fragment_Blog_For_
                 break;
             case 1:
                 Toast.makeText(this, "Item Selected", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this, FoodActivity.class);
+                intent = new Intent(this, TweetActivity.class);
                 startActivity(intent);
                 break;
             case 2:

@@ -37,6 +37,23 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".Activities.BlogDetailActivity" android:configChanges="orientation|screenSize"
             android:screenOrientation="landscape"/>
+        <activity android:name=".Activities.TweetActivity" android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".Activities.TwitterWebViewActivity" android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape"/>
+
     </application>
 
 </manifest>
+
+
+
+
+
+
+
+
+
+
+
+

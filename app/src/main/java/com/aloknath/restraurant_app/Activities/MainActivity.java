@@ -34,8 +34,8 @@ public class MainActivity extends ActionBarActivity implements Fragment_Entertai
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        android.support.v7.app.ActionBar actionBar1 =  getSupportActionBar();
-        actionBar1.hide();
+//        android.support.v7.app.ActionBar actionBar1 =  getSupportActionBar();
+//        actionBar1.hide();
 
 //        //Remove title bar
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);

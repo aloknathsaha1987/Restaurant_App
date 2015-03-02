@@ -3,6 +3,19 @@
 
     <string name="app_name">Restraurant_App</string>
     <string name="hello_world">Hello world!</string>
+    <string name="hello">Hello, </string>
     <string name="action_settings">Settings</string>
+    <string name="login_instructions">Login to twiter</string>
+    <string name="share_instructions">Enter share message</string>
+    <string name="btn_login">Login to Twitter</string>
+    <string name="btn_share">Share</string>
+    <string name="Logout">Logout</string>
+
+    <!-- Twitter Configurations -->
+    <string name="twitter_callback">http://javatechig.android.app</string>
+    <string name="twitter_consumer_key">ko9A3VHHBVAhHNLrA7WnWg1zc</string>
+    <string name="twitter_consumer_secret">FRaaesnRrMJ7Y8FgVu6oPizHYzI9ta0iFyJmiKILz3gBPHFn7Q</string>
+    <string name="twitter_oauth_verifier">oauth_verifier</string>
+    <!-- End Configurations -->
 
 </resources>

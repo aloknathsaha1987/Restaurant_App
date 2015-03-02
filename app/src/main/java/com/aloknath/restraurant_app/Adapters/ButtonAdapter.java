@@ -71,7 +71,7 @@ public class ButtonAdapter extends BaseAdapter {
         btn.setId(position);
 
         // Set the onclicklistener so that pressing the button fires an event
-// We will need to implement this onclicklistner.
+        // We will need to implement this onclicklistner.
 
         btn.setOnClickListener(new MyOnClickListener(position));
 

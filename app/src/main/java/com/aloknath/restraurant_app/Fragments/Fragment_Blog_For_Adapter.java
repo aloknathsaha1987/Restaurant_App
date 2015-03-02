@@ -21,6 +21,8 @@ import java.io.InputStream;
  */
 public class Fragment_Blog_For_Adapter extends Fragment {
 
+    //https://github.com/javatechig/Twitter-Sharing-Example-Android.git
+
     private FragmentBlogListner mListner;
 
     public interface FragmentBlogListner{
