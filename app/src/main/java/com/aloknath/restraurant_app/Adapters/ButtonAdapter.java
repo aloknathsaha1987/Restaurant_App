@@ -15,6 +15,7 @@ import com.aloknath.restraurant_app.Activities.BillingActivity;
 import com.aloknath.restraurant_app.Activities.EntertainmentActivity;
 import com.aloknath.restraurant_app.Activities.FoodActivity;
 import com.aloknath.restraurant_app.Activities.MainActivity;
+import com.aloknath.restraurant_app.Activities.MusicDisplayActivity;
 import com.aloknath.restraurant_app.R;
 
 /**
@@ -99,7 +100,7 @@ public class ButtonAdapter extends BaseAdapter {
                     mContext.startActivity(intent);
                     break;
                 case 1:
-                    intent = new Intent(mContext, FoodActivity.class);
+                    intent = new Intent(mContext, MusicDisplayActivity.class);
                     mContext.startActivity(intent);
                     break;
                 case 2:

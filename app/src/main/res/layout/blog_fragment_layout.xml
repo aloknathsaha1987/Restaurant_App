@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="horizontal"
@@ -72,17 +77,17 @@
         android:src="@drawable/ic_tweet"
         />
 
-    <ImageView
+
+    <com.facebook.widget.LikeView
+        android:id="@+id/like_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/facebook_like"
+        android:layout_height="30dp"
         android:layout_toRightOf="@+id/twitter_tweet"
         android:layout_marginTop="72dp"
-        android:layout_marginLeft="25dp"
-        android:src="@drawable/ic_facebook_like"
-        />
+        android:layout_marginLeft="25dp" />
 
-    <RelativeLayout
+
+     <RelativeLayout
         android:layout_width="525dp"
         android:layout_height="175dp"
         android:id="@+id/content_position"
@@ -122,3 +127,4 @@
         />
 
 </RelativeLayout>
+    </ScrollView>

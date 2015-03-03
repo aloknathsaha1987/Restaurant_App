@@ -2,6 +2,7 @@ package com.aloknath.restraurant_app.Fragments;
 
 import android.app.Activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.aloknath.restraurant_app.R;
+import com.facebook.Settings;
+import com.facebook.widget.LikeView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -70,6 +73,16 @@ public class Fragment_Blog_For_Adapter extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        // To initialize Facebook SDK
+        Settings.sdkInitialize(getActivity());
+        // Get LikeView button
+        LikeView likeView = (LikeView) view.findViewById(R.id.like_view);
+        // Set the object for which you want to get likes from your users (Photo, Link or even your FB Fan page)
+        likeView.setObjectId("https://www.facebook.com/aloknath.saha");
+        // Set foreground color fpr Like count text
+        likeView.setForegroundColor(-256);
+
+
         try
         {
             ImageView comment = (ImageView)view.findViewById(R.id.comments_button);
@@ -88,13 +101,13 @@ public class Fragment_Blog_For_Adapter extends Fragment {
                 }
             });
 
-            ImageView facebook = (ImageView)view.findViewById(R.id.facebook_like);
-            facebook.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mListner.onItemSelect(2, title);
-                }
-            });
+//            ImageView facebook = (ImageView)view.findViewById(R.id.facebook_like);
+//            facebook.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    mListner.onItemSelect(2, title);
+//                }
+//            });
 
             // get input stream
             InputStream ims = getActivity().getAssets().open("read_more_button.jpg");
@@ -122,4 +135,12 @@ public class Fragment_Blog_For_Adapter extends Fragment {
         }
 
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        LikeView.handleOnActivityResult(getActivity(), requestCode, resultCode, data);
+
+    }
+
 }

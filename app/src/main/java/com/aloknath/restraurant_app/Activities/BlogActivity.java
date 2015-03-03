@@ -39,6 +39,8 @@ public class BlogActivity extends FragmentActivity implements Fragment_Blog_For_
 //        //long pagerAdapterid = this.pagerAdapter.getItemId(position);
 //        return getSupportFragmentManager().findFragmentByTag("android:switcher:" + position);
 //    }
+    //keytool -exportcert -alias Restaurant_App_Release_Key -keystore "C:\Users\ALOKNATH\.android\restaurant_app.keystore" | "C:\Users\OpenSSL\bin\openssl" sha1 -binary | "C:\Users\OpenSSL\bin\openssl" base64
+    //keytool -exportcert -alias Restaurant_App -keystore "C:\Users\ALOKNATH\.android\restaurant_app.keystore" | "C:\Users\OpenSSL\bin\openssl" sha1 -binary | "C:\Users\OpenSSL\bin\openssl" base64
 
     @Override
     public void onItemSelect(int position, String title) {

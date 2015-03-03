@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_data_list">
+        <item>https://www.youtube.com/</item>
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRY7gOggh8qTrTKl2rfJSbxJXebMxSoYGqGxgfmhRn5hajjRDD4A</item>
+        <item>https://www.youtube.com/</item>
+        <item>http://www.emute-music.com/wp-content/uploads/photo1-2.jpg</item>
+        <item>https://www.youtube.com</item>
+    </string-array>
+</resources>

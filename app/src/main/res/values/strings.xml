@@ -18,4 +18,6 @@
     <string name="twitter_oauth_verifier">oauth_verifier</string>
     <!-- End Configurations -->
 
+    <string name="fb_user_id">422612677899436</string>
+
 </resources>
