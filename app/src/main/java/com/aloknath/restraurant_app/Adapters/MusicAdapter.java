@@ -3,6 +3,7 @@ package com.aloknath.restraurant_app.Adapters;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -17,7 +18,9 @@ import com.aloknath.restraurant_app.R;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ALOKNATH on 3/3/2015.
@@ -26,6 +29,8 @@ public class MusicAdapter extends BaseAdapter {
 
     private Context context;
     private List<RowItem> rowItemList;
+    private static final Map<String, ListObject> listValues = new HashMap<>();
+    private ListObject listObject;
 
     public MusicAdapter(Context context, List<RowItem> rowItemList){
         this.context = context;
@@ -67,50 +72,107 @@ public class MusicAdapter extends BaseAdapter {
         TextView albums = (TextView) view.findViewById(R.id.editText2);
         albums.setText(item.getAlbums());
 
+
+
         try {
             InputStream ims;
             Drawable d;
             switch (position) {
 
                 case 0:
-                    ims = context.getAssets().open("rock1.jpg");
-                    d = Drawable.createFromStream(ims, null);
-                    imgIcon.setBackground(d);
-//                    txtTitle.setText("ROCK MUSIC");
-//                    albums.setText("4 Albums");
+                    if(listValues.get("rock") == null) {
+                        ims = context.getAssets().open("rock1.jpg");
+                        d = Drawable.createFromStream(ims, null);
+                        imgIcon.setBackground(d);
+                        listObject = new ListObject();
+                        listObject.setDraw(d);
+                        listValues.put("rock", listObject);
+                    }else{
+                        listObject = listValues.get("rock");
+                        imgIcon.setBackground(listObject.getDraw());
+                    }
+
                     break;
 
                 case 1:
-                    ims = context.getAssets().open("pop1.jpg");
-                    d = Drawable.createFromStream(ims, null);
-                    imgIcon.setBackground(d);
-//                    txtTitle.setText("POP MUSIC");
-//                    albums.setText("3 Albums");
+                    if(listValues.get("pop") == null) {
+                        ims = context.getAssets().open("pop1.jpg");
+                        d = Drawable.createFromStream(ims, null);
+                        imgIcon.setBackground(d);
+                        imagebar.setBackgroundColor(Color.parseColor("#FFFF0094"));
+
+                        listObject = new ListObject();
+                        listObject.setDraw(d);
+                        listObject.setBarColor(Color.parseColor("#FFFF0094"));
+                        listValues.put("pop", listObject);
+
+                    }else{
+                        listObject = listValues.get("pop");
+                        imgIcon.setBackground(listObject.getDraw());
+                        imagebar.setBackgroundColor(listObject.getBarColor());
+
+                    }
+
                     break;
 
                 case 2:
-                    ims = context.getAssets().open("alternate1.jpg");
-                    d = Drawable.createFromStream(ims, null);
-                    imgIcon.setBackground(d);
-//                    txtTitle.setText("ALTERNATE MUSIC");
-//                    albums.setText("3 Albums");
+                    if(listValues.get("alternate") == null) {
+                        ims = context.getAssets().open("alternate1.jpg");
+                        d = Drawable.createFromStream(ims, null);
+                        imgIcon.setBackground(d);
+                        imagebar.setBackgroundColor(Color.parseColor("#FF00B43B"));
+
+                        listObject = new ListObject();
+                        listObject.setDraw(d);
+                        listObject.setBarColor(Color.parseColor("#FF00B43B"));
+                        listValues.put("alternate", listObject);
+                    }else{
+                        listObject = listValues.get("alternate");
+                        imgIcon.setBackground(listObject.getDraw());
+                        imagebar.setBackgroundColor(listObject.getBarColor());
+                    }
+
                     break;
 
                 case 3:
-                    ims = context.getAssets().open("classical1.jpg");
-                    d = Drawable.createFromStream(ims, null);
-                    imgIcon.setBackground(d);
-//                    txtTitle.setText("CLASSICAL MUSIC");
-//                    albums.setText("6 Albums");
+                    if(listValues.get("classical") == null) {
+                        ims = context.getAssets().open("classical1.jpg");
+                        d = Drawable.createFromStream(ims, null);
+                        imgIcon.setBackground(d);
+                        imagebar.setBackgroundColor(Color.parseColor("#FFFF1F04"));
+
+                        listObject = new ListObject();
+                        listObject.setDraw(d);
+                        listObject.setBarColor(Color.parseColor("#FFFF1F04"));
+
+                        listValues.put("classical", listObject);
+                    }else{
+                        listObject = listValues.get("classical");
+                        imgIcon.setBackground(listObject.getDraw());
+                        imagebar.setBackgroundColor(listObject.getBarColor());
+                    }
 
                     break;
 
                 case 4:
-                    ims = context.getAssets().open("youtube.jpg");
-                    d = Drawable.createFromStream(ims, null);
-                    imgIcon.setBackground(d);
-//                    txtTitle.setText("YOUTUBE SEARCH");
-//                    albums.setText("");
+                    if(listValues.get("youtube") == null) {
+                        ims = context.getAssets().open("youtube.jpg");
+                        d = Drawable.createFromStream(ims, null);
+                        imgIcon.setBackground(d);
+                        imagebar.setBackgroundColor(Color.parseColor("#FFF8FF00"));
+
+                        listObject = new ListObject();
+                        listObject.setDraw(d);
+                        listObject.setBarColor(Color.parseColor("#FFF8FF00"));
+
+                        listValues.put("youtube", listObject);
+                    }else{
+                        listObject = listValues.get("youtube");
+                        imgIcon.setBackground(listObject.getDraw());
+                        imagebar.setBackgroundColor(listObject.getBarColor());
+
+                    }
+
                     break;
 
                 default:
@@ -122,5 +184,28 @@ public class MusicAdapter extends BaseAdapter {
         }
 
         return view;
+    }
+
+    private class ListObject{
+        private Drawable draw;
+        private int barColor;
+
+        public Drawable getDraw() {
+            return draw;
+        }
+
+        public void setDraw(Drawable draw) {
+            this.draw = draw;
+        }
+
+        public int getBarColor() {
+            return barColor;
+        }
+
+        public void setBarColor(int barColor) {
+            this.barColor = barColor;
+        }
+
+
     }
 }

@@ -25,10 +25,20 @@ public class MusicViewerFragment extends Fragment {
     private View view;
     private ImageView imgIcon;
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = (View) inflater.inflate(R.layout.music_viewer_fragment_layout, container, false);
+        imgIcon = (ImageView)view.findViewById(R.id.imageView4);
+        InputStream ims = null;
+        try {
+            ims = getActivity().getAssets().open("rock2.jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Drawable d = Drawable.createFromStream(ims, null);
+        imgIcon.setBackground(d);
 
         return view;
     }
@@ -48,32 +58,28 @@ public class MusicViewerFragment extends Fragment {
                     ims = getActivity().getAssets().open("rock2.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
-//                    txtTitle.setText("ROCK MUSIC");
-//                    albums.setText("4 Albums");
+
                     break;
 
                 case 1:
                     ims = getActivity().getAssets().open("pop2.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
-//                    txtTitle.setText("POP MUSIC");
-//                    albums.setText("3 Albums");
+
                     break;
 
                 case 2:
                     ims = getActivity().getAssets().open("alternate2.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
-//                    txtTitle.setText("ALTERNATE MUSIC");
-//                    albums.setText("3 Albums");
+
                     break;
 
                 case 3:
                     ims = getActivity().getAssets().open("classical2.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
-//                    txtTitle.setText("CLASSICAL MUSIC");
-//                    albums.setText("6 Albums");
+
 
                     break;
 
@@ -81,11 +87,13 @@ public class MusicViewerFragment extends Fragment {
                     ims = getActivity().getAssets().open("youtube.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
-//                    txtTitle.setText("YOUTUBE SEARCH");
-//                    albums.setText("");
+
                     break;
 
                 default:
+                    ims = getActivity().getAssets().open("rock2.jpg");
+                    d = Drawable.createFromStream(ims, null);
+                    imgIcon.setBackground(d);
                     break;
             }
         }catch(IOException ex)
