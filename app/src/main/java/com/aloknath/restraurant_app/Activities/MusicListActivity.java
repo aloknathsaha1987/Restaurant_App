@@ -22,17 +22,17 @@ public class MusicListActivity extends Activity implements MusicListFragment.OnM
     }
 
     @Override
-    public void onMusicSelected(Uri tutUrl) {
+    public void onMusicSelected(int position) {
         MusicViewerFragment viewer = (MusicViewerFragment) getFragmentManager()
                 .findFragmentById(R.id.musicview_fragment);
 
         if (viewer == null || !viewer.isInLayout()) {
             Intent showContent = new Intent(getApplicationContext(),
                     MusicViewerActivity.class);
-            showContent.setData(Uri.parse(String.valueOf(tutUrl)));
+            showContent.putExtra("position_no", position);
             startActivity(showContent);
         } else {
-            viewer.updateUrl(String.valueOf(tutUrl));
+            viewer.updateUrl(position);
         }
     }
 }

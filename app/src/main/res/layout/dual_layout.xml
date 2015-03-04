@@ -9,14 +9,14 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:id="@+id/musiclist_fragment"
-        android:layout_weight="45">
+        android:layout_weight="35">
     </fragment>
     <fragment
         android:name="com.aloknath.restraurant_app.Fragments.MusicViewerFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:id="@+id/musicview_fragment"
-        android:layout_weight="55">
+        android:layout_weight="65">
     </fragment>
 </LinearLayout>
 

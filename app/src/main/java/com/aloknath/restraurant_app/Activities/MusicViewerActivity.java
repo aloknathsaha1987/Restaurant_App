@@ -19,11 +19,12 @@ public class MusicViewerActivity extends Activity {
         setContentView(R.layout.music_viewer_fragment);
 
         Intent launchingIntent = getIntent();
+        int position = launchingIntent.getIntExtra("position_no", 0);
         String content = launchingIntent.getData().toString();
 
         MusicViewerFragment viewer = (MusicViewerFragment) getFragmentManager()
                 .findFragmentById(R.id.musicview_fragment);
 
-        viewer.updateUrl(content);
+        viewer.updateUrl(position);
     }
 }

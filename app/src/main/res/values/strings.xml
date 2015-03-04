@@ -20,4 +20,20 @@
 
     <string name="fb_user_id">422612677899436</string>
 
+    <string-array name="titles">
+        <item>ROCK MUSIC</item>
+        <item>POP MUSIC</item>
+        <item>ALTERNATE MUSIC</item>
+        <item>CLASSICAL MUSIC</item>
+        <item>YOUTUBE SEARCH</item>
+    </string-array>
+
+    <string-array name="albums">
+        <item>4 Albums</item>
+        <item>2 Albums</item>
+        <item>3 Albums</item>
+        <item>4 Albums</item>
+        <item>None</item>
+    </string-array>
+
 </resources>

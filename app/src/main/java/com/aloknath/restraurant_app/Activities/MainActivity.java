@@ -57,50 +57,16 @@ public class MainActivity extends ActionBarActivity implements Fragment_Entertai
         Fragment_Blog fragmentBlog = new Fragment_Blog();
         fragmentTransaction.replace(R.id.fragmentBlog, fragmentBlog.newInstance("Blog"), "frag_blog");
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-
-
-        //fragmentTransaction.addToBackStack("Entertainment");
         fragmentTransaction.commit();
 
-////        fragmentEntertainment = new Fragment_Entertainment();
-////        fragmentTransaction.replace(R.id.fragmentEntertainment, fragmentEntertainment.newInstance("Entertainment"), "frag_entertainment");
-//          getSupportFragmentManager().beginTransaction().add(R.id.fragmentEntertainment, fragmentEntertainment.newInstance("Entertainment"), "frag_entertainment").commit();
-////        Fragment_Food fragmentFood = new Fragment_Food();
-////
 
 
         fragmentEntertainment = (Fragment_Entertainment) getSupportFragmentManager()
                 .findFragmentByTag("frag_entertainment");
-//        if (fragmentEntertainment == null){
-//            Toast.makeText(MainActivity.this, "Fragment is null", Toast.LENGTH_SHORT).show();
-//        }
-//        else{
-//            Toast.makeText(MainActivity.this, "Fragment is NOT null", Toast.LENGTH_SHORT).show();
-//        }
+
     }
 
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 
     @Override
     public void onItemSelect() {

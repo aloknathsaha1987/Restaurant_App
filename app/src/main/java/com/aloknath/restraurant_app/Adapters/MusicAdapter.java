@@ -1,51 +1,79 @@
-package com.aloknath.restraurant_app.Fragments;
+package com.aloknath.restraurant_app.Adapters;
 
 import android.annotation.TargetApi;
-import android.app.Fragment;
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.aloknath.restraurant_app.Objects.RowItem;
 import com.aloknath.restraurant_app.R;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * Created by ALOKNATH on 3/3/2015.
  */
-public class MusicViewerFragment extends Fragment {
+public class MusicAdapter extends BaseAdapter {
 
-    private View view;
-    private ImageView imgIcon;
+    private Context context;
+    private List<RowItem> rowItemList;
+
+    public MusicAdapter(Context context, List<RowItem> rowItemList){
+        this.context = context;
+        this.rowItemList = rowItemList;
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public int getCount() {
+        return rowItemList.size();
+    }
 
-        view = (View) inflater.inflate(R.layout.music_viewer_fragment_layout, container, false);
+    @Override
+    public Object getItem(int position) {
+        return rowItemList.get(position);
+    }
 
-        return view;
+    @Override
+    public long getItemId(int position) {
+
+        return rowItemList.indexOf(getItem(position));
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    public void updateUrl(int position) {
+    @Override
+    public View getView(int position, View view, ViewGroup viewGroup) {
 
-        imgIcon = (ImageView)view.findViewById(R.id.imageView4);
+        if(view == null){
+            LayoutInflater mInflater = (LayoutInflater) context
+                    .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            view = mInflater.inflate(R.layout.music_genre_adapter_layout, null);
+        }
+
+        RowItem item = rowItemList.get(position);
+
+        ImageView imagebar = (ImageView) view.findViewById(R.id.imageView2);
+        ImageView imgIcon = (ImageView) view.findViewById(R.id.imageView3);
+        TextView txtTitle = (TextView) view.findViewById(R.id.editText);
+        txtTitle.setText(item.getTitle());
+        TextView albums = (TextView) view.findViewById(R.id.editText2);
+        albums.setText(item.getAlbums());
 
         try {
             InputStream ims;
             Drawable d;
-
             switch (position) {
 
                 case 0:
-                    ims = getActivity().getAssets().open("rock2.jpg");
+                    ims = context.getAssets().open("rock1.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
 //                    txtTitle.setText("ROCK MUSIC");
@@ -53,7 +81,7 @@ public class MusicViewerFragment extends Fragment {
                     break;
 
                 case 1:
-                    ims = getActivity().getAssets().open("pop2.jpg");
+                    ims = context.getAssets().open("pop1.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
 //                    txtTitle.setText("POP MUSIC");
@@ -61,7 +89,7 @@ public class MusicViewerFragment extends Fragment {
                     break;
 
                 case 2:
-                    ims = getActivity().getAssets().open("alternate2.jpg");
+                    ims = context.getAssets().open("alternate1.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
 //                    txtTitle.setText("ALTERNATE MUSIC");
@@ -69,7 +97,7 @@ public class MusicViewerFragment extends Fragment {
                     break;
 
                 case 3:
-                    ims = getActivity().getAssets().open("classical2.jpg");
+                    ims = context.getAssets().open("classical1.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
 //                    txtTitle.setText("CLASSICAL MUSIC");
@@ -78,7 +106,7 @@ public class MusicViewerFragment extends Fragment {
                     break;
 
                 case 4:
-                    ims = getActivity().getAssets().open("youtube.jpg");
+                    ims = context.getAssets().open("youtube.jpg");
                     d = Drawable.createFromStream(ims, null);
                     imgIcon.setBackground(d);
 //                    txtTitle.setText("YOUTUBE SEARCH");
@@ -90,8 +118,9 @@ public class MusicViewerFragment extends Fragment {
             }
         }catch(IOException ex)
         {
-            return ;
+            return null;
         }
 
+        return view;
     }
 }
