@@ -4,10 +4,9 @@
     android:orientation="horizontal"
     >
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageView4"
-        android:background="#ffb5ff76"/>
+    <ExpandableListView
+        android:id="@+id/expandable_listView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
 
 </RelativeLayout>

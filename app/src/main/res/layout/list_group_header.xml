@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.aloknath.restraurant_app.LayoutScaling.ScalingLinearLayout
+    android1:layout_height="fill_parent"
+    android1:layout_width="fill_parent"
+    android1:layout_weight="1"
+    xmlns:android="http://schemas.android.com/apk/res-auto"
+    xmlns:android1="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff8bd8ff">
+
+        <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/albumImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="70dp"
+        android:background="#ffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Metallica"
+        android:id="@+id/bandName"
+        android:textSize="40dp"
+        android:textColor="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/albumImage"
+        android:layout_alignStart="@+id/albumImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Master Of Puppets"
+        android:id="@+id/albumTitle"
+        android:layout_below="@+id/albumImage"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/albumImage"
+        android:layout_alignStart="@+id/albumImage"/>
+
+
+</RelativeLayout>
+
+</com.aloknath.restraurant_app.LayoutScaling.ScalingLinearLayout>
